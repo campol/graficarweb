@@ -1,0 +1,46 @@
+<html ng-app="clientApp">
+    <head>
+        <meta charset="utf-8"/>
+    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/> 	     
+        <script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
+    	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.js"></script>
+    	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-sanitize.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script> 	
+    	<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>  
+    	<script src="./js/angular-locale_es-ve.js" type="text/javascript"></script>	
+    	<script src="./js/select.js"></script>
+        <script type="text/javascript" src="./js/app.js"></script>
+    	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/3.4.5/select2.css"/>    
+    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/selectize.js/0.8.5/css/selectize.default.css"/>
+    	<link rel="stylesheet" href="./css/select.css"/>
+    	 <!-- ui-select files -->
+    	
+
+		<style>
+			body {
+				padding: 15px;
+			}
+		</style>
+</head>
+    <body class="ng-cloak">
+		<div class="container">
+			<div class="jumbotron">
+				<h1>Bienvenido</h1>
+				<h2>Sistema para la realizaci&oacute;n de ordenes de compra</h2>
+			</div>
+		<div class="row">
+			<div class="col-md-3 list-group">
+				<a href="#" class="list-group-item active"> Men&uacute; </a> 
+				<a href="#!crearOrden" class="list-group-item">Crear orden de compra</a> 
+				<a href="#!listarOrden" class="list-group-item">Listar ordenes de compra</a> 
+			</div>
+			<div class="col-md-9" >
+				<div class="ng-view"></div>
+			</div>
+		</div>
+	</div>
+    </body>
+</html>
