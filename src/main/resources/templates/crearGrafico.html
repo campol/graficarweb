@@ -1,0 +1,50 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-12  panel panel-primary">
+			<div class="panel-heading">Crear Gr&aacute;fico</div>
+			<div class="panel-body">
+				<div class="row">
+					<div class = "col-md-12">
+						<output>T&iacute;tulo</output>
+						<input name="titulo" type = "text" class="form-control" ng-model = "grafico.titulo"/>
+					</div>
+				</div>
+				<div class="row">
+					<div class = "col-md-12">
+						<output>Subt&iacute;tulo</output>
+						<input name="subtitulo" type = "text" class="form-control" ng-model = "grafico.subtitulo"/>
+					</div>
+				</div>
+				<div class="row">
+					<div class = "col-md-12">
+						<output>Leyenda eje vertical</output>
+						<input name="ejex" type = "text" class="form-control" ng-model = "grafico.leyendaX"/>
+					</div>
+				</div>
+				<div class="row">
+					<div class = "col-md-12">
+						<output>Leyenda eje horizontal</output>
+						<input name="ejey" type = "text" class="form-control" ng-model = "grafico.leyendaY"/>
+					</div>
+				</div>
+				<div class="row">
+					<div class = "col-md-12">
+							<output>Tipo de Gr&aacute;fico</output>
+							<select style = "width: 100%;" name="prodts" ng-options="p as p.nombre for p in tipoGrafico track by p.nombre" ng-model="grafico.selectedGraf">
+							</select>
+					</div>
+				</div>
+				<div class="row">
+					<div class = "col-md-12">
+						<output></output>
+						<button class="btn btn-primary"	ng-click="crearOrden()">Graficar</button>
+					</div>
+				</div>
+				
+				
+		
+			</div>
+		</div>
+	</div>
+</div>
+

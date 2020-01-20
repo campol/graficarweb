@@ -16,4 +16,9 @@ public class HomeController {
     public String viewHome() {
         return "index";
     }
+	
+	@RequestMapping("/crearGrafico")
+	public String crearGrafico() {
+		return "crearGrafico";
+	}
 }
