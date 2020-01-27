@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-12  panel panel-primary">
-			<div class="panel-heading">Crear Gr&aacute;fico</div>
+			<div class="panel-heading" style="font-size: 20px;">Crear Gr&aacute;fico</div>
 			<div class="panel-body">
 				<div class="row">
 					<div class = "col-md-12">
@@ -18,33 +18,88 @@
 				<div class="row">
 					<div class = "col-md-12">
 						<output>Leyenda eje vertical</output>
-						<input name="ejex" type = "text" class="form-control" ng-model = "grafico.leyendaX"/>
+						<input name="ejex" type = "text" class="form-control" ng-model = "grafico.leyendaY"/>
 					</div>
 				</div>
 				<div class="row">
 					<div class = "col-md-12">
 						<output>Leyenda eje horizontal</output>
-						<input name="ejey" type = "text" class="form-control" ng-model = "grafico.leyendaY"/>
+						<input name="ejey" type = "text" class="form-control" ng-model = "grafico.leyendaX"/>
 					</div>
 				</div>
 				<div class="row">
 					<div class = "col-md-12">
 							<output>Tipo de Gr&aacute;fico</output>
-							<select style = "width: 100%;" name="prodts" ng-options="p as p.nombre for p in tipoGrafico track by p.nombre" ng-model="grafico.selectedGraf">
+							<select style = "width: 100%;" name="prodts" ng-options="p as p.nombre for p in tipoGrafico track by p.nombre" ng-model="grafico.selectedGraf"
+							ng-change = "onChange()">
 							</select>
 					</div>
 				</div>
 				<div class="row">
-					<div class = "col-md-12">
-						<output></output>
-						<button class="btn btn-primary"	ng-click="crearOrden()">Graficar</button>
+				</div>
+				<div class="row">
+					<h2 align="center">Datos a Graficar</h2>
+					<button type="button" style="float: right; margin-bottom: 10px;"
+						class="btn btn-info " ng-click="addXY()">Agregar</button>
+					<div class="col-md-12">
+
+						<div class="table-responsive">
+							<form id="form" ng-submit="crearGrafica()">
+								<table id="mytable" class="table table-bordered">
+
+									<thead>
+										<th style="width: 10%;"><output>Eje X</output></th>
+										<th style="width: 10%;"><output>Eje Y</output></th>
+										<th style="width: 25%;"><output>Acciones</output></th>
+									</thead>
+
+									<tbody>
+
+										<tr ng-repeat="dat in datEjes">
+											<td><input style="width:auto;height:50px;" type="{{typeInput}}" name="ejex{{$index}}"
+												ng-model="dat.x"
+												ng-disabled="false" /></td>
+											<td><input style="width:auto;height:50px;" type="number" name="ejey{{$index}}"
+												ng-model="dat.y"
+												ng-disabled="false" /></td>
+											<td>
+												<div class="buttons">
+													<button class="btn btn-danger"
+														ng-click="deleteEje($index)">Delete</button>
+												</div>
+											</td>
+										</tr>
+
+									</tbody>
+
+								</table>
+								<input type="submit" class="btn btn-primary" value="Graficar" />
+							</form>
+							<div class="clearfix"></div>
+						</div>
+
 					</div>
+
 				</div>
 				
-				
-		
+			</div>
+			
+			<div class="panel-heading" style="font-size: 20px;" ng-show = "mostrarGrafica">{{grafico.titulo}}</div>
+				<div class="panel-body">
+					<div class="caption" align="center" style="font-size: 18px;">{{grafico.subtitulo}}</div>
+					
+					<div class="row">
+						<div class="col-md-1">
+							<div class="caption" align="center" style="font-size: 14px; writing-mode: tb-rl;">{{grafico.leyendaY}}</div>
+						</div>
+						<div class="col-md-11">
+							<div id="myfirstchart" style="height: 250px;"></div>
+							<div class="caption" align="center" style="font-size: 14px;">{{grafico.leyendaX}}</div>
+						</div>
+						
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
 

@@ -1,8 +1,13 @@
 <html ng-app="clientApp">
     <head>
         <meta charset="utf-8"/>
-    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/> 	     
-        <script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
+    	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css"></link>
+<!-- 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script> -->
+		<script type="text/javascript" src="./js/jquery-3.2.1.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script> 	     
+        
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.js"></script>
 <!--     	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-animate.js"></script> -->
@@ -29,15 +34,14 @@
 				<h2>Sistema para la creación de gráficos</h2>
 			</div>
 		<div class="row">
-			<div class="col-md-3 list-group">
-				<a href="#" class="list-group-item active"> Men&uacute; </a> 
+			<div class="col-md-2 list-group">
+				<a href="#" class="list-group-item active" style="font-size: 20px;"> Men&uacute; </a> 
 				<a href="#!crearGrafico" class="list-group-item">Crear Gráficos</a> 
 			</div>
-			
-		</div>
-		<div class="row">
-			<div class="col-md-12" >
+			<div class="col-md-8" >
 				<div class="ng-view"></div>
+			</div>
+			<div class="col-md-2" >
 			</div>
 		</div>
 	</div>
