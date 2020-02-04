@@ -20,6 +20,8 @@ clientModule.controller('GraficoController', ["$scope", "$http", "$timeout", "$i
 	$scope.typeInput = "text";
 	
 	$scope.onChange = function(){
+		$("#myfirstchart").empty();
+		$scope.datEjes = [];
 		if($scope.grafico.selectedGraf.nombre == 'XY'){
 			$scope.typeInput = "number";
 		} else {
